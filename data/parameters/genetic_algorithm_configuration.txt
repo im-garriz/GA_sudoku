@@ -1,0 +1,80 @@
+### GENERAL CONFIGURATION ###
+
+# randomSeed: random seed provided to the random number generator, so as to
+# being able to reproduce the same experiment repeteadly
+randomSeed=42
+
+# sudokuFilePath: name of the file that contains the sudoku to be solved
+sudokuFilePath=easy_sudoku.txt
+#sudokuFilePath=dificult_sudoku.txt
+
+# populationLength: Number of individuals that the population is composed of
+populationLength=50
+
+# maxGenerations: maximum number of generations after the algorithm is stopped
+# (if the condition of maximun generations may not be used, set it to 0)
+maxGenerations=5000
+
+# maxSecondsOfExecution: maximum duration of the algorithm in seconds (if the criterion
+# might not be used, leave it as 0)
+maxSecondsOfExecution=0
+
+# logEachXGenerations: a log is printed on the screen every logEachXGenerations generations
+logEachXGenerations=100
+
+# maximizationProblem: if the problem has been defined as a maximization one,
+# set it to 1. Otherwise, set it to 0
+maximizationProblem=0
+
+### PARENT SELECTION CONFIGURATION ###
+
+# parentSelectionMethod: method that will be used on parent seleccion. Posibilities
+# are the following:
+#       - 0: tournament selection
+#       - 1: ...
+parentSelectionMethod=0
+
+# lambda_nOfParentsSelected: number of parents that are going to be selected on
+# each generation. If it might be the same number as the population length, set 
+# it to 0
+lambda_nOfParentsSelected=0
+
+# TOURNAMENT SELECTION CONFIGURATION
+
+# gamma_tournamentSelection: number of individuals that will be choosen on each
+# tournament
+gamma_tournamentSelection=2
+
+# p_bestParentSelectedProb: the probability that the tournament winner is chosen
+# as the parent. If the tournament winner is ont chosen, the parent is selected
+# randomly among the individuals that the tournament is compsed of
+p_bestParentSelectedProb=0.7
+
+# excludingTournament: 1 if the tournament is excluding (a winner cannot be selected
+# again on next tournaments), 0 if not (if parentSelectionMethod=0 (above), it does not
+# make sense to set it to 1, as the whole population would be selected as parent)
+excludingTournament=0
+
+### RECOMBINATION CONFIGURATION ###
+# pc_crossoverProb: probability of crossover
+pc_crossoverProb=0.9
+
+### MUTATION CONFIGURATION ###
+
+# pm_mutationProb: probability of mutation
+pm_mutationProb=0.30
+
+# Mutation method:
+#	-1: method1, mutate to legal values in rows, cols AND sungrids at the same time, ramdomly if not possible
+#	-2: method2, mutate to legal values in row, cols OR subgrids, randomly if not possible
+mutation_method=2
+
+### SURVIVAL SELECTION CONFIGURATION ###
+
+# generationalModel: 1 if the algorithm is following a generational model (all sons replace all parents)
+# 0 if not (not implemented on this problem).
+generationalModel=1
+
+# elitism: 1 if the model is using elitism (the best individual among sons and population is
+# alwais preserved through generations), 0 if not
+elitism=1
